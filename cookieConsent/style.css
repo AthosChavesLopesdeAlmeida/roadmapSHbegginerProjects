@@ -1,0 +1,104 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(19, 19, 19);
+  width: 99vw;
+  height: 98vh;
+  position: relative;
+}
+
+/* Animação de slide da esquerda para direita */
+@keyframes slideIn {
+  from {
+    transform: translateX(-450px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animação de slide da direita para a esquerda */
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-450px);
+  }
+}
+
+#cookieTab {
+  background-color: #2b2b2b;
+  color: white;
+  border-radius: 4px;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  width: 200px;
+  height: 250px;
+  position: absolute;
+  bottom: 5px;
+}
+
+/* Classe para ativar a animação de slide */
+#cookieTab.slide-in {
+  animation: slideIn 0.7s ease-out forwards;
+}
+
+/* Classe para ativar a animação de slide out */
+#cookieTab.slide-out {
+  animation: slideOut 0.7s ease-out forwards;
+}
+
+#cookieTab header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#cookieTab header h2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: -1px;
+  margin-top: -27px;
+  font-weight: 700;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+}
+
+#cookieTab main {
+  margin-top: 80px;
+}
+
+#cookieTab main p{
+  font-weight: 700;
+}
+
+#cookieTab main button{
+  padding: 8px 50px;
+  margin-top: 20px;
+  border: none;
+  color: white;
+  background-color: rgb(31, 31, 31);
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#cookieTab main button:hover{
+  opacity: 0.6;
+}
