@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Age Calculator</h1>
+  
+  <div>
+    <label for="year">Year:</label>
+    <input type="text" name="year" id="year">
+
+    <label for="month">Month:</label>
+    <input type="text" name="month" id="month">
+
+    <label for="day">Day:</label>
+    <input type="text" name="day" id="day">
+
+    <button id="calc">Calculate</button>
+  </div>
+
+  <p id="result"></p>
+  
+  <!-- Luxon (CDN) - disponibiliza `luxon` no navegador -->
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
