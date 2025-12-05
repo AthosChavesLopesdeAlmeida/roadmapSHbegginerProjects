@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Cards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Flash Cards</h1>
+    <div id="quiz">
+      <main>
+
+      </main>
+      <footer>
+        <button id="lt">&lt; Voltar</button>
+        <button id="gt">Avançar &gt;</button>
+      </footer>
+    </div>
+    <button id="criar">Novo card</button>
+    <div id="modal" style="display: none;">
+      <label for="pergunta">Pergunta</label>
+      <input type="text" id="pergunta" required>
+
+      <label for="resposta">Resposta</label>
+      <input type="text" id="resposta" required>
+
+      <button id="confirm">Criar</button>
+    </div>
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>

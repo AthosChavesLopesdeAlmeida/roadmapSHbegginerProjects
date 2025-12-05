@@ -1,0 +1,85 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 1.3em;
+}
+
+button {
+  color: white;
+  font-weight: bold;
+  background-color: rgb(31, 31, 225);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  width: 200px;
+}
+
+#quiz {
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+#modal {
+  border: 1px solid black;
+  border-radius: 6px;
+  height: 180px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 40px;
+  justify-content: center;
+  font-size: 0.8em;
+}
+
+#modal input {
+  border: 1px solid black;
+  padding: 5px 5px;
+  margin-bottom: 20px;
+}
+
+#quiz {
+  height: 300px;
+  width: 500px;
+  position: relative;
+  margin: 20px;
+}
+
+footer {
+  background-color: rgb(244, 244, 244);
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+#lt, #gt {
+  background-color: transparent;
+  color: black;
+}
+
+label {
+  margin-left: -110px;
+  margin-bottom: 3px;
+}
