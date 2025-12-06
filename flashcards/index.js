@@ -1,5 +1,5 @@
 import { createCardObject } from "./structure.js";
-import { createFlashCardInterface } from "./ui.js";
+import { createFlashCardInterface, showNextCard, showPrevCard } from "./ui.js";
 
 const openModalBtn = document.getElementById('openModal');
 const modal = document.getElementById('modal');
@@ -12,7 +12,7 @@ const cardContainer = document.getElementById('cardContainer');
 const next = document.getElementById('gt');
 const prev = document.getElementById('lt');
 
-
+let current = 0; 
 const cardsArray = [];
 
 
@@ -50,3 +50,21 @@ if (createCardBtn) {
 
 }
 
+if (next) {
+  next.addEventListener('click', () => {
+    const avancou = showNextCard(cardsArray, cardsArray[current], cardContainer);
+    if (avancou) {
+      current++;
+    }
+  });
+}
+
+
+if (prev) {
+  prev.addEventListener('click', () => {
+    const voltou = showPrevCard(cardsArray, cardsArray[current], cardContainer);
+    if (voltou) {
+      current--;
+    }
+  });
+}
