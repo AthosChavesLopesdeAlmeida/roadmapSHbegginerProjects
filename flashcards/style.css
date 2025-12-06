@@ -5,34 +5,81 @@
   box-sizing: border-box;
 }
 
+/* Paleta Discord */
+:root {
+  --discord-dark: #36393f;
+  --discord-darker: #2c2f33;
+  --discord-accent: #304591;
+  --discord-accent-hover: #4058a1;
+  --discord-text: #dcddde;
+  --discord-text-muted: #99aab5;
+}
+
 body {
   height: 100vh;
   width: 100vw;
-  background-color: white;
-  color: black;
+  background: linear-gradient(135deg, #36393f 0%, #2c2f33 100%);
+  color: var(--discord-text);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s ease;
 }
 
 h1 {
   font-size: 1.3em;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.6s ease;
 }
 
 button {
   color: white;
   font-weight: bold;
-  background-color: rgb(31, 31, 225);
+  background-color: var(--discord-accent);
   border: none;
   border-radius: 6px;
   padding: 10px 20px;
   width: 200px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--discord-accent-hover);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Animações suaves */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #quiz {
-  border: 1px solid black;
   border-radius: 6px;
+  background-color: var(--discord-darker);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease 0.2s both;
 }
 
 #modal {
@@ -41,27 +88,51 @@ button {
   left: 50%;
   transform: translate(-50%, -50%); 
   
-  background-color: white;       
+  background-color: var(--discord-dark);
   border-radius: 6px;
   height: 180px;
   width: 300px;
   display: none;                 
   flex-direction: column;
   align-items: center;
-  padding: 20px 40px;
+  padding: 130px 40px;
   justify-content: center;
   font-size: 0.8em;
 
-  box-shadow: 0 0 20px rgba(0,0,0,0.3); 
   z-index: 1000;
-  cursor: pointer;                
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  animation: slideInScale 0.3s ease;
 }
 
+#modal.open {
+  display: flex;
+}
+
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 
 #modal input {
-  border: 1px solid black;
-  padding: 5px 5px;
+  border: none;
+  padding: 8px 10px;
   margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: var(--discord-darker);
+  color: var(--discord-text);
+  transition: all 0.2s ease;
+}
+
+#modal input:focus {
+  outline: none;
+  background-color: #3e4147;
+  box-shadow: 0 0 0 2px var(--discord-accent);
 }
 
 #quiz {
@@ -72,24 +143,85 @@ button {
 }
 
 footer {
-  background-color: rgb(244, 244, 244);
+  background-color: var(--discord-darker);
   position: absolute;
   bottom: 0px;
   width: 100%;
+  height: 20%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 0px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
+  border-top: 1px solid rgba(114, 137, 218, 0.2);
 }
 
 #lt, #gt {
   background-color: transparent;
-  color: black;
+  color: var(--discord-text-muted);
+  width: auto;
+  transition: all 0.2s ease;
+}
+
+#lt:hover, #gt:hover {
+  color: var(--discord-accent);
+  transform: translateY(-2px);
 }
 
 label {
   margin-left: -110px;
   margin-bottom: 3px;
+}
+
+#cardContainer {
+  height: 80%;
+  border-top-left-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 6px;
+  background: linear-gradient(135deg, #40444b 0%, #36393f 100%);
+  animation: fadeIn 0.4s ease 0.1s both;
+  position: relative;
+}
+
+/* Estilos para elementos criados dinamicamente */
+.questionText {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--discord-text);
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 30px;
+  animation: fadeIn 0.4s ease;
+  max-width: 380px;
+  word-wrap: break-word;
+}
+
+.showAnswer {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  background: transparent;
+  color: var(--discord-text-muted);
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: auto;
+}
+
+.showAnswer:hover {
+  color: var(--discord-accent);
+  background: rgba(48, 69, 145, 0.1);
+  transform: none;
+}
+
+.showAnswer:active {
+  transform: scale(0.98);
 }

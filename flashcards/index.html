@@ -8,8 +8,10 @@
 </head>
 <body>
     <h1>Flash Cards</h1>
+    
     <div id="quiz">
-      <main>
+      
+      <main id="cardContainer">
 
       </main>
       
@@ -18,17 +20,18 @@
         <button id="gt">Avançar &gt;</button>
       </footer>
     </div>
-    <button id="criar">Novo card</button>
+    <button id="openModal">Novo card</button>
     
     <div id="modal">
       <label for="pergunta">Pergunta</label>
-      <input type="text" id="pergunta" required>
+      <input type="text" id="pergunta" required autocomplete="none">
 
       <label for="resposta">Resposta</label>
-      <input type="text" id="resposta" required>
+      <input type="text" id="resposta" required autocomplete="none">
 
       <button id="confirm">Criar</button>
     </div>
-    <script type="module" src="js/index.js"></script>
+    
+    <script type="module" src="index.js"></script>
 </body>
 </html>
